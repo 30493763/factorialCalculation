@@ -6,10 +6,19 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+// aurthor: ching ho, Li
+// student id: 30493763
+// last update date: 12-jan-2026
+// last update time: 10:37 PM
+// description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
+// algo 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
+// github repo:https://github.com/30493763/factorialCalculation.git
 
 namespace factorialCalculation
 {
