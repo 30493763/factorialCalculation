@@ -41,6 +41,7 @@
             this.txtRunTimeResultAlgo2 = new System.Windows.Forms.TextBox();
             this.txtIterationsResultAlgo1 = new System.Windows.Forms.TextBox();
             this.txtIterationsResultAlgo2 = new System.Windows.Forms.TextBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInput
@@ -167,11 +168,22 @@
             this.txtIterationsResultAlgo2.Size = new System.Drawing.Size(100, 53);
             this.txtIterationsResultAlgo2.TabIndex = 12;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Location = new System.Drawing.Point(829, 118);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(148, 54);
+            this.btnCheck.TabIndex = 13;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtIterationsResultAlgo2);
             this.Controls.Add(this.txtIterationsResultAlgo1);
             this.Controls.Add(this.txtRunTimeResultAlgo2);
@@ -207,6 +219,7 @@
         private System.Windows.Forms.TextBox txtRunTimeResultAlgo2;
         private System.Windows.Forms.TextBox txtIterationsResultAlgo1;
         private System.Windows.Forms.TextBox txtIterationsResultAlgo2;
+        private System.Windows.Forms.Button btnCheck;
     }
 }
 
