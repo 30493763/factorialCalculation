@@ -32,7 +32,7 @@
             this.lblEnterInteger = new System.Windows.Forms.Label();
             this.lblResultPrompt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblResultNumeric = new System.Windows.Forms.Label();
+            this.lblResultNumeric1 = new System.Windows.Forms.Label();
             this.lblRunTimePrompt = new System.Windows.Forms.Label();
             this.lblIterationsPrompt = new System.Windows.Forms.Label();
             this.lblAlgo1 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.txtIterationsResultAlgo1 = new System.Windows.Forms.TextBox();
             this.txtIterationsResultAlgo2 = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.lblResultNumeric2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtInput
@@ -84,15 +85,15 @@
             this.label1.Size = new System.Drawing.Size(0, 61);
             this.label1.TabIndex = 3;
             // 
-            // lblResultNumeric
+            // lblResultNumeric1
             // 
-            this.lblResultNumeric.AutoSize = true;
-            this.lblResultNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultNumeric.Location = new System.Drawing.Point(248, 109);
-            this.lblResultNumeric.Name = "lblResultNumeric";
-            this.lblResultNumeric.Size = new System.Drawing.Size(14, 16);
-            this.lblResultNumeric.TabIndex = 4;
-            this.lblResultNumeric.Text = "1";
+            this.lblResultNumeric1.AutoSize = true;
+            this.lblResultNumeric1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultNumeric1.Location = new System.Drawing.Point(248, 109);
+            this.lblResultNumeric1.Name = "lblResultNumeric1";
+            this.lblResultNumeric1.Size = new System.Drawing.Size(14, 16);
+            this.lblResultNumeric1.TabIndex = 4;
+            this.lblResultNumeric1.Text = "1";
             // 
             // lblRunTimePrompt
             // 
@@ -157,7 +158,6 @@
             this.txtIterationsResultAlgo1.Name = "txtIterationsResultAlgo1";
             this.txtIterationsResultAlgo1.Size = new System.Drawing.Size(250, 53);
             this.txtIterationsResultAlgo1.TabIndex = 11;
-            this.txtIterationsResultAlgo1.TextChanged += new System.EventHandler(this.txtIterationsResultAlgo1_TextChanged);
             // 
             // txtIterationsResultAlgo2
             // 
@@ -178,11 +178,22 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
+            // lblResultNumeric2
+            // 
+            this.lblResultNumeric2.AutoSize = true;
+            this.lblResultNumeric2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultNumeric2.Location = new System.Drawing.Point(257, 163);
+            this.lblResultNumeric2.Name = "lblResultNumeric2";
+            this.lblResultNumeric2.Size = new System.Drawing.Size(14, 16);
+            this.lblResultNumeric2.TabIndex = 14;
+            this.lblResultNumeric2.Text = "1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.lblResultNumeric2);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtIterationsResultAlgo2);
             this.Controls.Add(this.txtIterationsResultAlgo1);
@@ -192,7 +203,7 @@
             this.Controls.Add(this.lblAlgo1);
             this.Controls.Add(this.lblIterationsPrompt);
             this.Controls.Add(this.lblRunTimePrompt);
-            this.Controls.Add(this.lblResultNumeric);
+            this.Controls.Add(this.lblResultNumeric1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblResultPrompt);
             this.Controls.Add(this.lblEnterInteger);
@@ -210,7 +221,7 @@
         private System.Windows.Forms.Label lblEnterInteger;
         private System.Windows.Forms.Label lblResultPrompt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblResultNumeric;
+        private System.Windows.Forms.Label lblResultNumeric1;
         private System.Windows.Forms.Label lblRunTimePrompt;
         private System.Windows.Forms.Label lblIterationsPrompt;
         private System.Windows.Forms.Label lblAlgo1;
@@ -220,6 +231,7 @@
         private System.Windows.Forms.TextBox txtIterationsResultAlgo1;
         private System.Windows.Forms.TextBox txtIterationsResultAlgo2;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Label lblResultNumeric2;
     }
 }
 
