@@ -37,6 +37,8 @@ namespace factorialCalculation
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            progressBar1.Visible = true;
+
             //Count time taken to execute the algo 1
             Stopwatch stopwatch = new Stopwatch();
 
@@ -61,6 +63,8 @@ namespace factorialCalculation
             lblResultNumeric2.Text = result2.ToString();
             txtIterationsResultAlgo2.Text = count2.ToString();
             txtRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+
+            progressBar1.Visible = false;
         }
 
         private (BigInteger, int) Factorial_Algo1(int n)
@@ -127,5 +131,20 @@ namespace factorialCalculation
             }
             return (result, count);
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // for indeterminate progress using .NET framework
+            progressBar1.Style = ProgressBarStyle.Marquee;
+
+            progressBar1.Visible = false;
+        }
+
+        
     }
 }

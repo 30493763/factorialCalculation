@@ -43,6 +43,7 @@
             this.txtIterationsResultAlgo2 = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.lblResultNumeric2 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // txtInput
@@ -188,11 +189,20 @@
             this.lblResultNumeric2.TabIndex = 14;
             this.lblResultNumeric2.Text = "1";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(57, 642);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(868, 57);
+            this.progressBar1.TabIndex = 15;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblResultNumeric2);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtIterationsResultAlgo2);
@@ -210,6 +220,7 @@
             this.Controls.Add(this.txtInput);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,6 +243,7 @@
         private System.Windows.Forms.TextBox txtIterationsResultAlgo2;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Label lblResultNumeric2;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
