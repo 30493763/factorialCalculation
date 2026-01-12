@@ -53,7 +53,7 @@
             this.txtInput.TabIndex = 0;
             this.txtInput.Text = "0";
             this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtInput.Click += new System.EventHandler(this.txtInput_Click);
             // 
             // lblEnterInteger
             // 
@@ -61,10 +61,9 @@
             this.lblEnterInteger.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterInteger.Location = new System.Drawing.Point(46, 26);
             this.lblEnterInteger.Name = "lblEnterInteger";
-            this.lblEnterInteger.Size = new System.Drawing.Size(712, 63);
+            this.lblEnterInteger.Size = new System.Drawing.Size(698, 61);
             this.lblEnterInteger.TabIndex = 1;
             this.lblEnterInteger.Text = "Enter an Integer for Factorial";
-            this.lblEnterInteger.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblResultPrompt
             // 
@@ -72,7 +71,7 @@
             this.lblResultPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultPrompt.Location = new System.Drawing.Point(46, 109);
             this.lblResultPrompt.Name = "lblResultPrompt";
-            this.lblResultPrompt.Size = new System.Drawing.Size(196, 63);
+            this.lblResultPrompt.Size = new System.Drawing.Size(193, 61);
             this.lblResultPrompt.TabIndex = 2;
             this.lblResultPrompt.Text = "Result:";
             // 
@@ -82,16 +81,16 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(781, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 63);
+            this.label1.Size = new System.Drawing.Size(0, 61);
             this.label1.TabIndex = 3;
             // 
             // lblResultNumeric
             // 
             this.lblResultNumeric.AutoSize = true;
-            this.lblResultNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultNumeric.Location = new System.Drawing.Point(248, 109);
             this.lblResultNumeric.Name = "lblResultNumeric";
-            this.lblResultNumeric.Size = new System.Drawing.Size(57, 63);
+            this.lblResultNumeric.Size = new System.Drawing.Size(14, 16);
             this.lblResultNumeric.TabIndex = 4;
             this.lblResultNumeric.Text = "1";
             // 
@@ -101,7 +100,7 @@
             this.lblRunTimePrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRunTimePrompt.Location = new System.Drawing.Point(46, 382);
             this.lblRunTimePrompt.Name = "lblRunTimePrompt";
-            this.lblRunTimePrompt.Size = new System.Drawing.Size(247, 63);
+            this.lblRunTimePrompt.Size = new System.Drawing.Size(241, 61);
             this.lblRunTimePrompt.TabIndex = 5;
             this.lblRunTimePrompt.Text = "RunTime";
             // 
@@ -111,7 +110,7 @@
             this.lblIterationsPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIterationsPrompt.Location = new System.Drawing.Point(46, 495);
             this.lblIterationsPrompt.Name = "lblIterationsPrompt";
-            this.lblIterationsPrompt.Size = new System.Drawing.Size(250, 63);
+            this.lblIterationsPrompt.Size = new System.Drawing.Size(246, 61);
             this.lblIterationsPrompt.TabIndex = 6;
             this.lblIterationsPrompt.Text = "Iterations";
             // 
@@ -121,10 +120,9 @@
             this.lblAlgo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlgo1.Location = new System.Drawing.Point(416, 266);
             this.lblAlgo1.Name = "lblAlgo1";
-            this.lblAlgo1.Size = new System.Drawing.Size(166, 63);
+            this.lblAlgo1.Size = new System.Drawing.Size(162, 61);
             this.lblAlgo1.TabIndex = 7;
             this.lblAlgo1.Text = "Algo1";
-            this.lblAlgo1.Click += new System.EventHandler(this.lblAlgo1_Click);
             // 
             // lblAlgo2
             // 
@@ -132,40 +130,41 @@
             this.lblAlgo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlgo2.Location = new System.Drawing.Point(763, 266);
             this.lblAlgo2.Name = "lblAlgo2";
-            this.lblAlgo2.Size = new System.Drawing.Size(166, 63);
+            this.lblAlgo2.Size = new System.Drawing.Size(162, 61);
             this.lblAlgo2.TabIndex = 8;
             this.lblAlgo2.Text = "Algo2";
             // 
             // txtRunTimeResultAlgo1
             // 
             this.txtRunTimeResultAlgo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRunTimeResultAlgo1.Location = new System.Drawing.Point(482, 382);
+            this.txtRunTimeResultAlgo1.Location = new System.Drawing.Point(326, 382);
             this.txtRunTimeResultAlgo1.Name = "txtRunTimeResultAlgo1";
-            this.txtRunTimeResultAlgo1.Size = new System.Drawing.Size(100, 53);
+            this.txtRunTimeResultAlgo1.Size = new System.Drawing.Size(250, 53);
             this.txtRunTimeResultAlgo1.TabIndex = 9;
             // 
             // txtRunTimeResultAlgo2
             // 
             this.txtRunTimeResultAlgo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRunTimeResultAlgo2.Location = new System.Drawing.Point(829, 382);
+            this.txtRunTimeResultAlgo2.Location = new System.Drawing.Point(675, 382);
             this.txtRunTimeResultAlgo2.Name = "txtRunTimeResultAlgo2";
-            this.txtRunTimeResultAlgo2.Size = new System.Drawing.Size(100, 53);
+            this.txtRunTimeResultAlgo2.Size = new System.Drawing.Size(250, 53);
             this.txtRunTimeResultAlgo2.TabIndex = 10;
             // 
             // txtIterationsResultAlgo1
             // 
             this.txtIterationsResultAlgo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIterationsResultAlgo1.Location = new System.Drawing.Point(482, 495);
+            this.txtIterationsResultAlgo1.Location = new System.Drawing.Point(326, 495);
             this.txtIterationsResultAlgo1.Name = "txtIterationsResultAlgo1";
-            this.txtIterationsResultAlgo1.Size = new System.Drawing.Size(100, 53);
+            this.txtIterationsResultAlgo1.Size = new System.Drawing.Size(250, 53);
             this.txtIterationsResultAlgo1.TabIndex = 11;
+            this.txtIterationsResultAlgo1.TextChanged += new System.EventHandler(this.txtIterationsResultAlgo1_TextChanged);
             // 
             // txtIterationsResultAlgo2
             // 
             this.txtIterationsResultAlgo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIterationsResultAlgo2.Location = new System.Drawing.Point(829, 495);
+            this.txtIterationsResultAlgo2.Location = new System.Drawing.Point(675, 495);
             this.txtIterationsResultAlgo2.Name = "txtIterationsResultAlgo2";
-            this.txtIterationsResultAlgo2.Size = new System.Drawing.Size(100, 53);
+            this.txtIterationsResultAlgo2.Size = new System.Drawing.Size(250, 53);
             this.txtIterationsResultAlgo2.TabIndex = 12;
             // 
             // btnCheck
@@ -177,6 +176,7 @@
             this.btnCheck.TabIndex = 13;
             this.btnCheck.Text = "Check";
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // Form1
             // 
