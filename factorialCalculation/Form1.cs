@@ -146,11 +146,12 @@ namespace factorialCalculation
 
             if (number < MAX)
             {
-                return number.ToString();
+                return number.ToString("#,##0");
             }
             else
             {
-                return string.Format("{0:0.##E+00}", number);
+                //return string.Format("{0:0.##E+00}", number);
+                return string.Format("{0:0.###################E+00}", number);
             }
         }
     }
