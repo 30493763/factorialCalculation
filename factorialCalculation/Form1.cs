@@ -24,6 +24,8 @@ namespace factorialCalculation
 {
     public partial class Form1 : Form
     {
+       
+
         public Form1()
         {
             InitializeComponent();
@@ -33,10 +35,18 @@ namespace factorialCalculation
         {
             txtInput.Text = "";
             lblResultNumeric1.Text = "";
+            lblResultNumeric2.Text = "";
+            txtIterationsResultAlgo1.Text = "";
+            txtIterationsResultAlgo2.Text = "";
+            txtRunTimeResultAlgo1.Text = "";
+            txtRunTimeResultAlgo2.Text = "";
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+
+            
+
             //Count time taken to execute the algo 1
             Stopwatch stopwatch = new Stopwatch();
 
@@ -44,9 +54,9 @@ namespace factorialCalculation
             stopwatch.Start();            
             var (result1, count1) = Factorial_Algo1(int.Parse(txtInput.Text));
             // stop time
-            stopwatch.Stop();   
+            stopwatch.Stop();
 
-            lblResultNumeric1.Text = result1.ToString();
+            lblResultNumeric1.Text = FormatNumber(result1);
             txtIterationsResultAlgo1.Text = count1.ToString();
             txtRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
 
@@ -58,7 +68,7 @@ namespace factorialCalculation
             // stop time
             stopwatch.Stop();   
 
-            lblResultNumeric2.Text = result2.ToString();
+            lblResultNumeric2.Text = FormatNumber(result2);
             txtIterationsResultAlgo2.Text = count2.ToString();
             txtRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
         }
@@ -126,6 +136,22 @@ namespace factorialCalculation
                 }
             }
             return (result, count);
+        }
+
+        private string FormatNumber(BigInteger number)
+        {
+            BigInteger MAX = new BigInteger(0);
+
+            MAX = 10000000000000000000;
+
+            if (number < MAX)
+            {
+                return number.ToString();
+            }
+            else
+            {
+                return string.Format("{0:0.##E+00}", number);
+            }
         }
     }
 }
