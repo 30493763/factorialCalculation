@@ -15,7 +15,7 @@ using System.Windows.Forms;
 // aurthor: ching ho, Li
 // student id: 30493763
 // last update date: 22-jan-2026
-// last update time: 14:42 PM
+// last update time: 14:58 PM
 // description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
 // Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
 // github repo:https://github.com/30493763/factorialCalculation.git
@@ -40,6 +40,10 @@ namespace factorialCalculation
             lblRunTimeResultAlgo1.Text = "";
             lblRunTimeResultAlgo2.Text = "";
         }
+
+        //***********************************************************************************************************************************
+        //         CLICK EVENTS FOR BUTTONS AND OTHER CONTROLS
+        //***********************************************************************************************************************************
 
         // using 2 async algorithms to calculate factorial and compare performance
         // here an async await pattern is used to prevent UI blocking during calculation
@@ -100,6 +104,10 @@ namespace factorialCalculation
             }
         }
 
+        //***********************************************************************************************************************************
+        //         METHODS FOR FACTORIAL CALCULATION AND INPUT VALIDATION
+        //***********************************************************************************************************************************
+
         private bool inputNumberValidation(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
@@ -125,11 +133,13 @@ namespace factorialCalculation
             return true;
         }
 
+        // Async wrapper for Algorithm 1
         private Task<(BigInteger, int)> Factorial_Algo1Async1(int n)
         {
             return Task.Run(() => Factorial_Algo1(n));
         }
 
+        // Async wrapper for Algorithm 2
         private Task<(BigInteger, int)> Factorial_Algo1Async2(int n)
         {
             return Task.Run(() => Factorial_Algo2(n));
@@ -161,6 +171,8 @@ namespace factorialCalculation
         }
 
         // Algorithm 2: Optimized approach that reduces the number of multiplications by pairing factors
+        //Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
+
         private (BigInteger, int) Factorial_Algo2(int n)
         {
             BigInteger result = new BigInteger(0);
