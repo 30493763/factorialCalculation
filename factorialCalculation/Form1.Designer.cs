@@ -49,7 +49,7 @@
             // 
             this.txtInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.Location = new System.Drawing.Point(49, 122);
-            this.txtInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInput.Margin = new System.Windows.Forms.Padding(2);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(389, 56);
             this.txtInput.TabIndex = 0;
@@ -102,7 +102,6 @@
             this.lblResultNumeric1.TabIndex = 4;
             this.lblResultNumeric1.Text = "1";
             this.lblResultNumeric1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblResultNumeric1.Click += new System.EventHandler(this.lblResultNumeric1_Click);
             // 
             // lblRunTimePrompt
             // 
@@ -150,13 +149,13 @@
             // 
             // btnCheck
             // 
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.Location = new System.Drawing.Point(506, 122);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(188, 56);
             this.btnCheck.TabIndex = 13;
-            this.btnCheck.Text = "Check";
+            this.btnCheck.Text = "CHECK";
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
@@ -245,7 +244,7 @@
             this.Controls.Add(this.lblResultPrompt);
             this.Controls.Add(this.lblEnterInteger);
             this.Controls.Add(this.txtInput);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

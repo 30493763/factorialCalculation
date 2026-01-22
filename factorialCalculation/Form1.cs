@@ -14,23 +14,22 @@ using System.Windows.Forms;
 
 // aurthor: ching ho, Li
 // student id: 30493763
-// last update date: 12-jan-2026
-// last update time: 10:37 PM
+// last update date: 22-jan-2026
+// last update time: 14:42 PM
 // description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
-// algo 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
+// Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
 // github repo:https://github.com/30493763/factorialCalculation.git
 
 namespace factorialCalculation
 {
     public partial class Form1 : Form
     {
-       
-
         public Form1()
         {
             InitializeComponent();
         }
 
+        // click to clear input and output for another calculation
         private void txtInput_Click(object sender, EventArgs e)
         {
             txtInput.Text = "";
@@ -42,11 +41,12 @@ namespace factorialCalculation
             lblRunTimeResultAlgo2.Text = "";
         }
 
-        private async void btnCheck_Click(object sender, EventArgs e)
+        // using 2 async algorithms to calculate factorial and compare performance
+        // here an async await pattern is used to prevent UI blocking during calculation
+        private async void btnCheck_Click(object sender, EventArgs e) 
         {
-            //string inputNumber = txtInput.Text;
-
-            if ( !inputNumberValidation(txtInput.Text) )
+            // input number validation. Must be a positive integer or 0, and less than 50000 because of the hardware limitation
+            if ( !inputNumberValidation(txtInput.Text) ) 
                 return;
 
             int n = int.Parse(txtInput.Text);
@@ -59,36 +59,38 @@ namespace factorialCalculation
 
             try
             {
-                //Count time taken to execute the algo 1
+                //Count time taken to execute the Algorithm 1
                 Stopwatch stopwatch = new Stopwatch();
 
-                //// Start timing
-                stopwatch.Start();
+                stopwatch.Start(); // Start timing
                 var (result1, count1) = await Factorial_Algo1Async1(n);
-                //// stop time
-                stopwatch.Stop();
+                stopwatch.Stop();  // stop time
 
+                //1. display factorial result
                 lblResultNumeric1.Text = FormatNumber(result1);
+                //2. display number of iterations
                 lblIterationsResultAlgo1.Text = count1.ToString();
+                //3. display time taken
                 lblRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
 
                 stopwatch.Reset();
 
-                // Start timing
-                stopwatch.Start();
+                stopwatch.Start(); // Start timing
                 var (result2, count2) = await Factorial_Algo1Async2(n);
-                // stop time
-                stopwatch.Stop();
+                stopwatch.Stop();  // stop time
 
+                //1. display factorial result
                 lblResultNumeric2.Text = FormatNumber(result2);
+                //2. display number of iterations
                 lblIterationsResultAlgo2.Text = count2.ToString();
+                //3. display time taken
                 lblRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
             }
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
+            catch (Exception)
+            {
+                 MessageBox.Show("An error occurred during the calculation. Please try again.");
+                 throw;
+            }
             finally
             {
                 // Re-enable UI and restore cursor
@@ -96,8 +98,6 @@ namespace factorialCalculation
                 txtInput.Enabled = true;
                 Cursor = previousCursor;
             }
-
-            
         }
 
         private bool inputNumberValidation(string input)
@@ -135,6 +135,7 @@ namespace factorialCalculation
             return Task.Run(() => Factorial_Algo2(n));
         }
 
+        // Algorithm 1: Standard iterative approach to calculate factorial
         private (BigInteger, int) Factorial_Algo1(int n)
         {
             BigInteger c = new BigInteger(0);
@@ -159,6 +160,7 @@ namespace factorialCalculation
             return (c, count);
         }
 
+        // Algorithm 2: Optimized approach that reduces the number of multiplications by pairing factors
         private (BigInteger, int) Factorial_Algo2(int n)
         {
             BigInteger result = new BigInteger(0);
@@ -203,28 +205,12 @@ namespace factorialCalculation
 
         private string FormatNumber(BigInteger number)
         {
-            BigInteger MAX = new BigInteger(0);
-
-            MAX = 100000000;
+            const int MAX = 100000000; // the maximum number to show full digits without scientific notation for the labels on the Form
 
             if (number < MAX)
-            {
-                MessageBox.Show($"fuck 1 {number.ToString()}");
-                return number.ToString("#,##0");
-            }
+                return number.ToString("#,##0"); // e.g. "123,456,789"
             else
-            {
-                //MessageBox.Show($"fuck 2 {number.ToString()}");
-                //return string.Format("{0:0.###E+0}", number);
-
-                string formatted = number.ToString("E2"); // "1.23E+003"
-                return formatted;
-            }
-        }
-
-        private void lblResultNumeric1_Click(object sender, EventArgs e)
-        {
-
+                return  number.ToString("E2"); // e.g. "1.23E+003"
         }
     }
 }
