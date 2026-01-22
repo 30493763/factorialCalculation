@@ -36,10 +36,10 @@ namespace factorialCalculation
             txtInput.Text = "";
             lblResultNumeric1.Text = "";
             lblResultNumeric2.Text = "";
-            txtIterationsResultAlgo1.Text = "";
-            txtIterationsResultAlgo2.Text = "";
-            txtRunTimeResultAlgo1.Text = "";
-            txtRunTimeResultAlgo2.Text = "";
+            lblIterationsResultAlgo1.Text = "";
+            lblIterationsResultAlgo2.Text = "";
+            lblRunTimeResultAlgo1.Text = "";
+            lblRunTimeResultAlgo2.Text = "";
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -57,8 +57,8 @@ namespace factorialCalculation
             stopwatch.Stop();
 
             lblResultNumeric1.Text = FormatNumber(result1);
-            txtIterationsResultAlgo1.Text = count1.ToString();
-            txtRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+            lblIterationsResultAlgo1.Text = count1.ToString();
+            lblRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
 
             stopwatch.Reset();
 
@@ -69,8 +69,8 @@ namespace factorialCalculation
             stopwatch.Stop();   
 
             lblResultNumeric2.Text = FormatNumber(result2);
-            txtIterationsResultAlgo2.Text = count2.ToString();
-            txtRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+            lblIterationsResultAlgo2.Text = count2.ToString();
+            lblRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
         }
 
         private (BigInteger, int) Factorial_Algo1(int n)
@@ -142,17 +142,26 @@ namespace factorialCalculation
         {
             BigInteger MAX = new BigInteger(0);
 
-            MAX = 10000000000000000000;
+            MAX = 100000000;
 
             if (number < MAX)
             {
+                MessageBox.Show($"fuck 1 {number.ToString()}");
                 return number.ToString("#,##0");
             }
             else
             {
-                //return string.Format("{0:0.##E+00}", number);
-                return string.Format("{0:0.###################E+00}", number);
+                //MessageBox.Show($"fuck 2 {number.ToString()}");
+                //return string.Format("{0:0.###E+0}", number);
+
+                string formatted = number.ToString("E2"); // "1.23E+003"
+                return formatted;
             }
+        }
+
+        private void lblResultNumeric1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
