@@ -62,10 +62,10 @@ namespace factorialCalculation
                 //Count time taken to execute the algo 1
                 Stopwatch stopwatch = new Stopwatch();
 
-                // Start timing
+                //// Start timing
                 stopwatch.Start();
                 var (result1, count1) = await Factorial_Algo1Async1(n);
-                // stop time
+                //// stop time
                 stopwatch.Stop();
 
                 lblResultNumeric1.Text = FormatNumber(result1);
@@ -79,7 +79,6 @@ namespace factorialCalculation
                 var (result2, count2) = await Factorial_Algo1Async2(n);
                 // stop time
                 stopwatch.Stop();
-
 
                 lblResultNumeric2.Text = FormatNumber(result2);
                 lblIterationsResultAlgo2.Text = count2.ToString();
@@ -150,6 +149,7 @@ namespace factorialCalculation
                 c = 1;
                 count = 1;
             }
+
             c = 1;
             for (int i = 2; i <= n; i++)
             {
