@@ -42,38 +42,63 @@ namespace factorialCalculation
             lblRunTimeResultAlgo2.Text = "";
         }
 
-        private void btnCheck_Click(object sender, EventArgs e)
+        private async void btnCheck_Click(object sender, EventArgs e)
         {
-            string inputNumber = txtInput.Text;
+            //string inputNumber = txtInput.Text;
 
-            if ( !inputNumberValidation(inputNumber) )
+            if ( !inputNumberValidation(txtInput.Text) )
                 return;
 
+            int n = int.Parse(txtInput.Text);
 
-            //Count time taken to execute the algo 1
-            Stopwatch stopwatch = new Stopwatch();
+            // Disable UI to prevent re-entrancy and show waiting cursor
+            btnCheck.Enabled = false;
+            txtInput.Enabled = false;
+            var previousCursor = Cursor;
+            Cursor = Cursors.WaitCursor;
 
-            // Start timing
-            stopwatch.Start();            
-            var (result1, count1) = Factorial_Algo1(int.Parse(txtInput.Text));
-            // stop time
-            stopwatch.Stop();
+            try
+            {
+                //Count time taken to execute the algo 1
+                Stopwatch stopwatch = new Stopwatch();
 
-            lblResultNumeric1.Text = FormatNumber(result1);
-            lblIterationsResultAlgo1.Text = count1.ToString();
-            lblRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+                // Start timing
+                stopwatch.Start();
+                var (result1, count1) = await Factorial_Algo1Async1(n);
+                // stop time
+                stopwatch.Stop();
 
-            stopwatch.Reset();
+                lblResultNumeric1.Text = FormatNumber(result1);
+                lblIterationsResultAlgo1.Text = count1.ToString();
+                lblRunTimeResultAlgo1.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
 
-            // Start timing
-            stopwatch.Start();             
-            var (result2, count2) = Factorial_Algo2(int.Parse(txtInput.Text));
-            // stop time
-            stopwatch.Stop();   
+                stopwatch.Reset();
 
-            lblResultNumeric2.Text = FormatNumber(result2);
-            lblIterationsResultAlgo2.Text = count2.ToString();
-            lblRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+                // Start timing
+                stopwatch.Start();
+                var (result2, count2) = await Factorial_Algo1Async2(n);
+                // stop time
+                stopwatch.Stop();
+
+
+                lblResultNumeric2.Text = FormatNumber(result2);
+                lblIterationsResultAlgo2.Text = count2.ToString();
+                lblRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+            }
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
+            finally
+            {
+                // Re-enable UI and restore cursor
+                btnCheck.Enabled = true;
+                txtInput.Enabled = true;
+                Cursor = previousCursor;
+            }
+
+            
         }
 
         private bool inputNumberValidation(string input)
@@ -99,6 +124,16 @@ namespace factorialCalculation
                 return false;
             }
             return true;
+        }
+
+        private Task<(BigInteger, int)> Factorial_Algo1Async1(int n)
+        {
+            return Task.Run(() => Factorial_Algo1(n));
+        }
+
+        private Task<(BigInteger, int)> Factorial_Algo1Async2(int n)
+        {
+            return Task.Run(() => Factorial_Algo2(n));
         }
 
         private (BigInteger, int) Factorial_Algo1(int n)
