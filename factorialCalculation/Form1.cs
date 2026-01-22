@@ -44,8 +44,11 @@ namespace factorialCalculation
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            string inputNumber = txtInput.Text;
 
-            
+            if ( !inputNumberValidation(inputNumber) )
+                return;
+
 
             //Count time taken to execute the algo 1
             Stopwatch stopwatch = new Stopwatch();
@@ -71,6 +74,31 @@ namespace factorialCalculation
             lblResultNumeric2.Text = FormatNumber(result2);
             lblIterationsResultAlgo2.Text = count2.ToString();
             lblRunTimeResultAlgo2.Text = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+        }
+
+        private bool inputNumberValidation(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                MessageBox.Show("Please enter a number.");
+                return false;
+            }
+            if (!int.TryParse(input, out int n))
+            {
+                MessageBox.Show("Invalid input. Please enter a valid integer.");
+                return false;
+            }
+            if (n < 0)
+            {
+                MessageBox.Show("Negative numbers do not have a factorial. Please enter a non-negative integer.");
+                return false;
+            }
+            if (n > 50000)
+            {
+                MessageBox.Show("Input too large. Please enter a number less than or equal to 10,000.");
+                return false;
+            }
+            return true;
         }
 
         private (BigInteger, int) Factorial_Algo1(int n)
