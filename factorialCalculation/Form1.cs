@@ -37,13 +37,16 @@ namespace factorialCalculation
         // click to clear input and output for another calculation
         private void txtInput_Click(object sender, EventArgs e)
         {
+            const string DEFAULT_CHAR = "0";
+            const string DEFAULT_RESULT = "--";
+
             txtInput.Text = "";
-            lblResultNumeric1.Text = "";
-            lblResultNumeric2.Text = "";
-            lblIterationsResultAlgo1.Text = "";
-            lblIterationsResultAlgo2.Text = "";
-            lblRunTimeResultAlgo1.Text = "";
-            lblRunTimeResultAlgo2.Text = "";
+            lblResultNumeric1.Text = DEFAULT_RESULT;
+            lblResultNumeric2.Text = DEFAULT_RESULT;
+            lblIterationsResultAlgo1.Text = DEFAULT_CHAR;
+            lblIterationsResultAlgo2.Text = DEFAULT_CHAR;
+            lblRunTimeResultAlgo1.Text = DEFAULT_CHAR;
+            lblRunTimeResultAlgo2.Text = DEFAULT_CHAR;
         }
 
 
@@ -235,5 +238,6 @@ namespace factorialCalculation
             else
                 return  number.ToString("E2"); // e.g. "1.23E+003"
         }
+
     }
 }
