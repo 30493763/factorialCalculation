@@ -14,8 +14,8 @@ using System.Windows.Forms;
 
 // aurthor: ching ho, Li
 // student id: 30493763
-// last update date: 22-jan-2026
-// last update time: 14:58 PM
+// last update date: 28-jan-2026
+// last update time: 10:43 AM
 // description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
 // Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
 // github repo:https://github.com/30493763/factorialCalculation.git
@@ -29,6 +29,11 @@ namespace factorialCalculation
             InitializeComponent();
         }
 
+        //***********************************************************************************************************************************
+        //         CLICK EVENTS FOR BUTTONS AND OTHER CONTROLS
+        //***********************************************************************************************************************************
+
+
         // click to clear input and output for another calculation
         private void txtInput_Click(object sender, EventArgs e)
         {
@@ -41,19 +46,17 @@ namespace factorialCalculation
             lblRunTimeResultAlgo2.Text = "";
         }
 
-        //***********************************************************************************************************************************
-        //         CLICK EVENTS FOR BUTTONS AND OTHER CONTROLS
-        //***********************************************************************************************************************************
 
         // using 2 algorithms to calculate factorial and compare performance
         // here async await is used to prevent UI blocking during calculation
         private async void btnCheck_Click(object sender, EventArgs e) 
         {
-            // input number validation. Must be a positive integer or 0, and less than 50000 because of the hardware limitation
+            // input number validation, using method inputNumberValidation()
+            // Must be a positive integer or 0, and less than 50000 because of the hardware limitation
             if ( !inputNumberValidation(txtInput.Text) ) 
                 return;
 
-            int n = int.Parse(txtInput.Text);
+            int n = int.Parse(txtInput.Text); // get input number after validation
 
             // Disable UI to prevent re-entrancy and show waiting cursor
             btnCheck.Enabled = false;
@@ -147,31 +150,29 @@ namespace factorialCalculation
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start(); // Start timing
 
-            BigInteger c = new BigInteger(0);
+            BigInteger result = new BigInteger(0); // 
             int count = 0;
 
             if (n < 0)
-            {
                 throw new ArgumentException("Negative numbers do not have a factorial.");
-            }
             if (n == 0 || n == 1)
             {
-                //return 1;
-                c = 1;
+                result = 1;
                 count = 1;
             }
-            
-            c = 1;
+
+            result = 1;
+
             for (int i = 2; i <= n; i++)
             {
-                c *= i;
+                result *= i;
                 count++;
             }
 
             stopwatch.Stop();  // stop time
             string timeTaken = stopwatch.ElapsedMilliseconds.ToString() + " ms";
 
-            return (c, count, timeTaken);
+            return (result, count, timeTaken);
 
         }
 
@@ -186,12 +187,12 @@ namespace factorialCalculation
             BigInteger result = new BigInteger(0);
             int count = 0;
             int factorial = 0;
-            bool isEven = n % 2 == 0;
+
+            // if the input Number 'n' is odd, we can use algorithem for n+1 which is even, then divide the final result by n
+            bool isEven = n % 2 == 0;  
 
             if (n < 0)
-            {
                 throw new ArgumentException("Negative numbers do not have a factorial.");
-            }
             if (n == 0 || n == 1)
             {
                 result = 1;
