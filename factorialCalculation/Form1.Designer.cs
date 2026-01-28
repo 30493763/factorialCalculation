@@ -60,10 +60,11 @@
             // lblEnterInteger
             // 
             this.lblEnterInteger.AutoSize = true;
-            this.lblEnterInteger.Font = new System.Drawing.Font("Digital-7 Italic", 31.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterInteger.Font = new System.Drawing.Font("Digital-7 Italic", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterInteger.ForeColor = System.Drawing.Color.IndianRed;
             this.lblEnterInteger.Location = new System.Drawing.Point(45, 26);
             this.lblEnterInteger.Name = "lblEnterInteger";
-            this.lblEnterInteger.Size = new System.Drawing.Size(684, 55);
+            this.lblEnterInteger.Size = new System.Drawing.Size(769, 62);
             this.lblEnterInteger.TabIndex = 1;
             this.lblEnterInteger.Text = "Enter an Integer for Factorial";
             // 
@@ -141,14 +142,16 @@
             // 
             // btnCheck
             // 
+            this.btnCheck.BackColor = System.Drawing.Color.IndianRed;
             this.btnCheck.Font = new System.Drawing.Font("Digital-7 Italic", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCheck.Location = new System.Drawing.Point(675, 150);
             this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(251, 69);
             this.btnCheck.TabIndex = 13;
             this.btnCheck.Text = "CHECK";
-            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // lblResultNumeric2
@@ -215,6 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1005, 937);
             this.Controls.Add(this.lblRunTimeResultAlgo2);
             this.Controls.Add(this.lblIterationsResultAlgo2);
@@ -231,6 +235,7 @@
             this.Controls.Add(this.lblResultPrompt);
             this.Controls.Add(this.lblEnterInteger);
             this.Controls.Add(this.txtInput);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Factorial using 2 Different Algorithms";
