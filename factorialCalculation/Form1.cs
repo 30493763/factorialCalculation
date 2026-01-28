@@ -66,26 +66,22 @@ namespace factorialCalculation
 
             try
             {
-                //Count time taken to execute the Algorithm 1
-                var (result1, count1, timeTaken1) = await Factorial_Algo1Async1(n);
+                //get result, number of interations, time taken using Algorithm 2
+                var (result2, interation2, timeTaken2) = await Factorial_Algo1Async2(n);
 
-                //1. display factorial result
-                lblResultNumeric1.Text = FormatNumber(result1);
-                //2. display number of iterations
-                lblIterationsResultAlgo1.Text = count1.ToString();
-                //3. display time taken
-                lblRunTimeResultAlgo1.Text = timeTaken1;
+                //get result, number of interations, time taken using Algorithm 1
+                var (result1, interation1, timeTaken1) = await Factorial_Algo1Async1(n);
 
 
-
-                var (result2, count2, timeTaken2) = await Factorial_Algo1Async2(n);
-
-                //1. display factorial result
+                //display result, number of iterations, time taken for Algorithm 2
                 lblResultNumeric2.Text = FormatNumber(result2);
-                //2. display number of iterations
-                lblIterationsResultAlgo2.Text = count2.ToString();
-                //3. display time taken
+                lblIterationsResultAlgo2.Text = interation2.ToString();
                 lblRunTimeResultAlgo2.Text = timeTaken2;
+
+                //display result, number of iterations, time taken for Algorithm 1
+                lblResultNumeric1.Text = FormatNumber(result1);
+                lblIterationsResultAlgo1.Text = interation1.ToString();
+                lblRunTimeResultAlgo1.Text = timeTaken1;
 
             }
             catch (Exception)
@@ -171,6 +167,7 @@ namespace factorialCalculation
 
             stopwatch.Stop();  // stop time
             string timeTaken = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+            stopwatch.Reset();
 
             return (result, count, timeTaken);
 
@@ -224,6 +221,7 @@ namespace factorialCalculation
 
             stopwatch.Stop();  // stop time
             string timeTaken = stopwatch.ElapsedMilliseconds.ToString() + " ms";
+            stopwatch.Reset();
 
             return (result, count, timeTaken);
         }
