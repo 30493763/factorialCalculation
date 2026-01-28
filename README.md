@@ -1,6 +1,8 @@
-<img src="blob:https://repolaunch.com/52cd2d50-ffa5-4570-9096-1e33fa4cb358" alt="" width="225" height="150" class="EditorPreview_align-center__Q9vjk undefined"><p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
+<img src="https://github.com/30493763/factorialCalculation/blob/master/factorialCalculation/image/neko_logo.jpg" alt="" align="center" width="225" height="150"><h1 align="center">FACTORIAL</h1>
+<p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
 
-<img src="blob:https://repolaunch.com/9594ed73-8279-416b-b66b-9cc81224cfe2" alt="" width="auto" height="auto" class="EditorPreview_align-center__Q9vjk undefined">
+<img src="https://github.com/30493763/factorialCalculation/blob/master/factorialCalculation/image/screenShot1.jpg" alt="" align="center" width="auto" height="auto">
+
 ## Project Description
 
 Create a C# Windows Forms Application that calculates the factorial of a given number using inbuilt Math functions.
