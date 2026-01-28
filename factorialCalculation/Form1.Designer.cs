@@ -145,12 +145,12 @@
             this.btnCheck.BackColor = System.Drawing.Color.IndianRed;
             this.btnCheck.Font = new System.Drawing.Font("Digital-7 Italic", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCheck.Location = new System.Drawing.Point(675, 150);
+            this.btnCheck.Location = new System.Drawing.Point(610, 120);
             this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(251, 69);
+            this.btnCheck.Size = new System.Drawing.Size(309, 99);
             this.btnCheck.TabIndex = 13;
-            this.btnCheck.Text = "CHECK";
+            this.btnCheck.Text = "CALCULATE FACTORIAL";
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
