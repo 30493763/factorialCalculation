@@ -7,6 +7,12 @@
 
 Create a C# Windows Forms Application that calculates the factorial of a given number using inbuilt Math functions.
 
+## Project Description
+
+*   Double click on the file "Digital7Italic-BW658.ttf" to install custom font onto your system.
+
+*   Double click on the file "factorialCalculation.sln" to open the project in Visual Studio.
+
 ## Key Components
 
 TextBox txtInput for user to input an Integer to calculate Factorial
